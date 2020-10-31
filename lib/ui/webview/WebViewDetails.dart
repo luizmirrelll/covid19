@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_away_covid19/ui/countrydetails/CountryDetails.dart';
 import 'package:go_away_covid19/util/ColorUtil.dart';
 import 'package:go_away_covid19/util/StyleUtil.dart';
 import 'package:url_launcher/url_launcher.dart';

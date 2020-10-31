@@ -4,15 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_away_covid19/ui/countryselection/SelectCountry.dart';
 import 'package:go_away_covid19/ui/home/HomePage.dart';
+// ignore: unused_import
 import 'package:go_away_covid19/util/ColorUtil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
-
-
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
@@ -26,6 +24,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+class StatelessWidget {}
 
 class SplashPage extends StatefulWidget {
   @override
@@ -61,7 +61,7 @@ class _SplashPageState extends State<SplashPage> {
 
   void decideWhichPageToGo() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
-    if(preferences.containsKey('userCountry')) {
+    if (preferences.containsKey('userCountry')) {
       gotoHomePage();
     } else {
       gotoSelectCountryPage();
@@ -73,7 +73,12 @@ class _SplashPageState extends State<SplashPage> {
       context,
       PageRouteBuilder(
         transitionDuration: Duration(milliseconds: 800),
-        pageBuilder: (_, __, ___,) => HomePage(),
+        pageBuilder: (
+          _,
+          __,
+          ___,
+        ) =>
+            HomePage(),
       ),
     );
   }
@@ -83,7 +88,12 @@ class _SplashPageState extends State<SplashPage> {
       context,
       PageRouteBuilder(
         transitionDuration: Duration(milliseconds: 800),
-        pageBuilder: (_, __, ___,) => SelectCountry(),
+        pageBuilder: (
+          _,
+          __,
+          ___,
+        ) =>
+            SelectCountry(),
       ),
     );
   }
